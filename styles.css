@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #785fa9;
+  --text-body: #847c96;
+  --background: #111111;
+  --white: #eeeaea;
+
+  font-size: 62.5%;
+}
+
+body, input, button {
+  font: 400 1.6rem Rubik, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--white);
+  text-align: center;
+
+  background-image: url(/30274736.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#container {
+  width: 80%;
+  max-width: 40rem;
+  margin-top: 10rem;
+  margin-inline: auto;
+}
+
+.image {
+  width: 15rem;
+}
+
+.title {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+  font-size: 2.8rem;
+}
+
+.title span {
+  color: var(--primary);
+}
+
+.subtitle {
+  margin-bottom: 4rem;
+  color: var(--text-body);
+}
+
+input, button {
+  display: block;
+  width: 100%;
+  height: 5.3rem;
+  font-size: 1.6rem;
+  border-radius: .4rem;
+}
+
+input {
+  background-color: #1f1f1f;
+  color: var(--white);
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+
+  border: none;
+  outline: none;
+}
+
+input:focus {
+  border: 2px solid var(--primary);
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--white);
+
+  border: none;
+
+  cursor: pointer;
+  transition: filter .3s;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}

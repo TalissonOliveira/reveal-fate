@@ -86,6 +86,23 @@ button {
   transition: filter .3s;
 }
 
-button:hover {
+button:not(:disabled):hover {
   filter: brightness(1.1);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+#answer {
+  margin-top: 3rem;
+
+  transition: opacity 1s;
+}
+
+#answer div {
+  font-weight: 1.6rem;
+  font-weight: normal;
+  opacity: 0.9rem;
 }

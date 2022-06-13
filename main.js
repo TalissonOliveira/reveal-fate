@@ -50,3 +50,77 @@ function askQuestion() {
     askButton.removeAttribute('disabled')
   }, 3000)
 }
+
+particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 110,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    },
+    color: {
+      value: "#9380be"
+    },
+    shape: {
+      type: "circle"
+    },
+    opacity: {
+      value: 0.5,
+      random: true,
+      anim: {
+        enable: true,
+        speed: 1,
+        opacity_min: 0,
+        sync: false
+      }
+    },
+    size: {
+      value: 3,
+      random: true,
+      anim: {
+        enable: false,
+        speed: 4,
+        size_min: 0,
+        sync: false
+      }
+    },
+    line_linked: {
+      enable: false,
+    },
+    move: {
+      enable: true,
+      speed: 1,
+      direction: "none",
+      random: true,
+      out_mode: "out",
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: {
+        enable: true,
+        mode: "bubble"
+      },
+      onclick: {
+        enable: true,
+        mode: "repulse"
+      },
+      resize: true
+    },
+    modes: {
+      bubble: {
+        distance: 250,
+        size: 0,
+        duration: 3,
+        opacity: 0,
+        speed: 3
+      },
+      repulse: {
+        distance: 250,
+        duration: 3
+      }
+    }
+  }
+})

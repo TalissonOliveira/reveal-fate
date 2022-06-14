@@ -35,15 +35,28 @@ body {
   z-index: 10;
 }
 
-.image {
+.crystal-ball {
   width: 15rem;
 }
 
+.crystal-ball.bounce-in {
+  animation: bounceIn 1s ease 6s forwards;
+  opacity: 0;
+}
+
+.crystal-ball.shake {
+  animation: shake .5s forwards;
+  opacity: 1;
+}
+
 .title {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
   color: var(--white);
   font-size: 2.8rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+
+  animation: bounceIn 1s ease 6s forwards;
 }
 
 .title span {
@@ -51,8 +64,11 @@ body {
 }
 
 .subtitle {
-  margin-bottom: 4rem;
   color: var(--text-body);
+  margin-bottom: 4rem;
+  opacity: 0;
+
+  animation: bounceIn 1s ease 6.1s forwards;
 }
 
 input, button {
@@ -61,6 +77,9 @@ input, button {
   height: 5.3rem;
   font-size: 1.6rem;
   border-radius: .4rem;
+  opacity: 0;
+
+  animation: bounceIn 1s ease 6.3s forwards;
 }
 
 input {
@@ -71,6 +90,9 @@ input {
 
   border: none;
   outline: none;
+  opacity: 0;
+
+  animation: bounceIn 1s ease 6.2s forwards;
 }
 
 input:focus {
@@ -108,8 +130,108 @@ button:disabled {
   opacity: 0.9rem;
 }
 
-#particles-js{
+/* ======= Particles ======= */
+#particles-js {
   position: absolute;
   width: 100%;
   height: 100vh;
+  visibility: hidden;
+
+  animation: blurParticles 3s 5s forwards;
+}
+
+/* ======= Background Loader ======= */
+.bg-loader {
+  background-color: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 100;
+
+  animation: backgroundLoader 1.5s ease 5s forwards;
+}
+
+.bg-loader p {
+  font-size: 3.2rem;
+  color: var(--white);
+  filter: blur(0px);
+
+  animation: textFadeOut 2s ease-out 4s forwards;
+}
+
+.bg-loader p span {
+  opacity: 0;
+  animation: textFadeIn 0.7s ease-in-out var(--i) forwards;
+}
+
+/* ======= Animations ======= */
+@keyframes backgroundLoader {
+  from {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  to {
+    filter: blur(5px);
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(10deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(.8);
+  }
+  70% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blurParticles {
+  from {
+    filter: blur(20px);
+  }
+  to {
+    filter: blur(0px);
+    visibility: visible;
+  }
 }

@@ -20,10 +20,12 @@ const answers = [
   "Signs point to yes."
 ]
 
+const crystalBallImg = document.querySelector('.crystal-ball')
 const answer = document.querySelector('#answer')
 const questionInput = document.querySelector('#questionInput')
 const askButton = document.querySelector('#askButton')
 const totalAnswers = answers.length
+
 
 function askQuestion() {
   if (questionInput.value == '') {
@@ -31,6 +33,7 @@ function askQuestion() {
     return
   }
 
+  crystalBallImg.classList.add('shake')
   askButton.setAttribute('disabled', true)
   answer.innerHTML = ''
 
@@ -48,6 +51,10 @@ function askQuestion() {
   setTimeout(() => {
     answer.style.opacity = 0
     askButton.removeAttribute('disabled')
+
+    crystalBallImg.classList.remove('shake')
+    crystalBallImg.classList.remove('bounce-in')
+    crystalBallImg.style.opacity = 1
   }, 3000)
 }
 

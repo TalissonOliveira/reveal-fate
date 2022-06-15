@@ -4,27 +4,77 @@
   box-sizing: border-box;
 }
 
-:root {
-  --primary: #785fa9;
-  --text-body: #847c96;
-  --background: #111111;
-  --white: #eeeaea;
-
+html {
   font-size: 62.5%;
 }
 
-body, input, button {
+:root {
+  --primary: #785fa9;
+  --text: #eeeaea;
+  --text-body: #847c96;
+  --background: #111111;
+  --shape: #1f1f1f;
+  --shape-hover: #171717;
+  --white: #eeeaea;
+}
+
+.light-mode:root {
+  --primary: #7656b5;
+  --text: #1f1f1f;
+  --text-body: #594f62;
+  --background: #eeeaea;
+  --shape: #ffffff;
+  --shape-hover: #f4f2f2;
+  --white: #eeeaea;
+}
+
+body,
+input,
+button {
   font: 400 1.6rem Rubik, sans-serif;
 }
 
 body {
   background-color: var(--background);
-  color: var(--white);
+  color: var(--text);
   display: flex;
   text-align: center;
   min-height: 100vh;
 
   overflow: hidden;
+  transition: background .5s;
+}
+
+.toggle-button {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  width: 4rem;
+  height: 4rem;
+
+  opacity: 0;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  animation: showToggleButton 1s 6.4s forwards;
+}
+
+.toggle-button img {
+  height: 2.5rem;
+  position: absolute;
+}
+
+.toggle-button img.fadeOut {
+  animation: IconFadeOut 1s ease-in forwards;
+}
+
+.toggle-button img.fadeIn {
+  animation: IconFadeIn 1s ease-out forwards;
 }
 
 #container {
@@ -45,17 +95,18 @@ body {
 }
 
 .crystal-ball.shake {
-  animation: shake .5s forwards;
+  animation: shake 0.5s forwards;
   opacity: 1;
 }
 
 .title {
-  color: var(--white);
+  color: var(--text);
   font-size: 2.8rem;
   margin-top: 3rem;
   margin-bottom: 1rem;
   opacity: 0;
 
+  transition: color .5s;
   animation: bounceIn 1s ease 6s forwards;
 }
 
@@ -68,23 +119,25 @@ body {
   margin-bottom: 4rem;
   opacity: 0;
 
+  transition: color .5s;
   animation: bounceIn 1s ease 6.1s forwards;
 }
 
-input, button {
+.question-input,
+.ask-button {
   display: block;
   width: 100%;
   height: 5.3rem;
   font-size: 1.6rem;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   opacity: 0;
 
-  animation: bounceIn 1s ease 6.3s forwards;
+  transition: background .5s;
 }
 
-input {
-  background-color: #1f1f1f;
-  color: var(--white);
+.question-input {
+  background-color: var(--shape);
+  color: var(--text);
   padding-left: 2rem;
   margin-bottom: 2rem;
 
@@ -95,36 +148,37 @@ input {
   animation: bounceIn 1s ease 6.2s forwards;
 }
 
-input:focus {
+.question-input:focus {
   border: 2px solid var(--primary);
 }
 
-button {
+.ask-button {
   background-color: var(--primary);
   color: var(--white);
 
   border: none;
-
   cursor: pointer;
-  transition: filter .3s;
+
+  transition: filter 0.3s;
+  animation: bounceIn 1s ease 6.3s forwards;
 }
 
-button:not(:disabled):hover {
+.ask-button:not(:disabled):hover {
   filter: brightness(1.1);
 }
 
-button:disabled {
+.ask-button:disabled {
   opacity: 0.6;
   cursor: default;
 }
 
-#answer {
+.answer {
   margin-top: 3rem;
 
   transition: opacity 1s;
 }
 
-#answer div {
+.answer div {
   font-weight: 1.6rem;
   font-weight: normal;
   opacity: 0.9rem;
@@ -155,8 +209,8 @@ button:disabled {
 }
 
 .bg-loader p {
+  color: var(--text);
   font-size: 3.2rem;
-  color: var(--white);
   filter: blur(0px);
 
   animation: textFadeOut 2s ease-out 4s forwards;
@@ -205,7 +259,7 @@ button:disabled {
 @keyframes bounceIn {
   0% {
     opacity: 0;
-    transform: scale(.8);
+    transform: scale(0.8);
   }
   70% {
     transform: scale(1.03);
@@ -233,5 +287,43 @@ button:disabled {
   to {
     filter: blur(0px);
     visibility: visible;
+  }
+}
+
+@keyframes showToggleButton {
+  0% {
+    opacity: 0;
+    filter: blur(0px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(3px);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes IconFadeOut {
+  from {
+    filter: blur(0px);
+  }
+  to {
+    filter: blur(3px);
+    opacity: 0;
+  }
+}
+
+@keyframes IconFadeIn {
+  0% {
+    filter: blur(3px);
+  }
+  25% {
+    filter: blur(3px);
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
   }
 }

@@ -20,12 +20,14 @@ const answers = [
   "Signs point to yes."
 ]
 
+const sunIcon = document.querySelector('.sun-icon')
+const moonIcon = document.querySelector('.moon-icon')
 const crystalBallImg = document.querySelector('.crystal-ball')
-const answer = document.querySelector('#answer')
-const questionInput = document.querySelector('#questionInput')
-const askButton = document.querySelector('#askButton')
+const questionInput = document.querySelector('.question-input')
+const askButton = document.querySelector('.ask-button')
+const answer = document.querySelector('.answer')
+const html = document.querySelector('html')
 const totalAnswers = answers.length
-
 
 function askQuestion() {
   if (questionInput.value == '') {

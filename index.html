@@ -26,6 +26,10 @@
     </p>
   </div>
   <div id="container">
+    <button class="toggle-button" onclick="toggleTheme()">
+      <img class="sun-icon" src="./assets/sun.svg" alt="">
+      <img class="moon-icon" src="./assets/moon.svg" alt="">
+    </button>
     <img
       class="crystal-ball bounce-in"
       src="./assets/crystal-ball.gif"
@@ -33,15 +37,16 @@
     >
     <h1 class="title">I will reveal your <span>fate</span>!</h1>
     <p class="subtitle">Click on ask question and your destination will be revealed.</p>
-    <input id="questionInput" type="text" placeholder="Type your question" />
-    <button id="askButton" type="button" onclick="askQuestion()">
+    <input class="question-input" type="text" placeholder="Type your question" />
+    <button class="ask-button" type="button" onclick="askQuestion()">
       Ask question
     </button>
 
-    <h3 id="answer"></h3>
+    <h3 class="answer"></h3>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="./main.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/themeSwitch.js"></script>
 </body>
 </html>

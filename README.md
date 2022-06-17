@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img width="320px" src="https://ik.imagekit.io/imagens/Reveal_Fate/reveal-fate-logo_fbKy5kF2J.svg" alt="Reveal Fate" />
+  <img width="280px" src="https://ik.imagekit.io/imagens/Reveal_Fate/reveal-fate-logo_fbKy5kF2J.svg" alt="Reveal Fate" />
 </h1>
 
 <p align="center">
@@ -9,7 +9,7 @@
 
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/TalissonOliveira/reveal-fate?style=flat-square">
 
-<img alt="License" src="https://img.shields.io/github/license/TalissonOliveira/reveal-fate?style=flat-square">
+<img alt="License" src="https://img.shields.io/github/license/talissonoliveira/reveal-fate?style=flat-square">
 </p>
 
 <p align="center">
